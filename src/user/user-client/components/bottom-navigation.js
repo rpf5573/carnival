@@ -27,11 +27,6 @@ class BottomNavigation extends Component {
           <div className="text">지도</div>
           <div className={rippleCN}></div>
         </NavLink>
-        <NavLink to="/user/page/point">
-          <div className="icon"><ChartIcon /></div>
-          <div className="text">포인트</div>
-          <div className={rippleCN}></div>
-        </NavLink>
         {this.props.puzzleBoxCount > 0 &&
           <NavLink to="/user/page/puzzle">
             <div className="icon"><PuzzleIcon /></div>
