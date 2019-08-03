@@ -127,7 +127,7 @@ class App extends Component {
           <div className="l-top">
             <div className="text-container">
               <ReactRevealText transitionTime={2000} show={this.state.show}>
-                CARNIVAL UP
+                
               </ReactRevealText>
             </div>
           </div>

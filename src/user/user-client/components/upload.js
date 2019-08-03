@@ -12,9 +12,6 @@ import LinearProgress from '@material-ui/core/LinearProgress';
 import videojs from 'video.js';
 import 'video.js/dist/video-js.css';
 import * as loadImage from 'blueimp-load-image';
-import { toServerRe } from 'console-remote-client';
-
-var consolere = toServerRe.connect('console.re','80','rpf5573');
 
 class Upload extends Component {
   constructor(props) {
