@@ -43,7 +43,7 @@ pool.query = util.promisify(pool.query);
 /* ------------------------------------------------------------------------- *
  *  Post Info Warehouse DB Connection
 /* ------------------------------------------------------------------------- */
-config.database = 'warehouse'; // db이름만 바꾸면 됨
+config.database = 'mire_warehouse'; // db이름만 바꾸면 됨
 const warehouse_pool = mysql.createPool(config);
 // Ping database to check for common exception errors.
 warehouse_pool.getConnection((err, connection) => {

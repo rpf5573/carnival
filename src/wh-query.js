@@ -3,7 +3,7 @@
 /* ------------------------------------------------------------------------- */
 class WHQuery {
   constructor(mysql) {
-    this.table = 'dc_warehouse';
+    this.table = 'mire_warehouse';
     this.mysql = mysql;
   }
   async getInitialState() {
