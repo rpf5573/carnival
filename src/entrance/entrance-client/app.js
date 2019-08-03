@@ -126,9 +126,6 @@ class App extends Component {
         <div className="page-inner">
           <div className="l-top">
             <div className="text-container">
-              <ReactRevealText transitionTime={2000} show={this.state.show}>
-                
-              </ReactRevealText>
             </div>
           </div>
           <div className="l-bottom">
