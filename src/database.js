@@ -8,7 +8,7 @@ let config = {
   connectionLimit: 20,
   host: 'localhost',
   user: 'root',
-  database: `discovery_${process.env.DCV}`
+  database: `mire`
 };
 let password = 'root';
 if ( process.env.NODE_ENV == 'production' ) {

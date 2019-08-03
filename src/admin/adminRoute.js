@@ -266,7 +266,7 @@ module.exports = (app, DCQuery, upload) => {
   // reset
   app.post('/admin/reset', async (req, res) => {
     let pw = req.body.resetPassword;
-    if ( pw && pw == 'discovery_reset' ) {
+    if ( pw && pw == 'carnival_reset' ) {
       try {
         await DCQuery.reset(); // DB reset
         await fs.remove( path.resolve( __dirname, `../../public/admin/uploads/${process.env.DCV}`) ); // admin uploads reset

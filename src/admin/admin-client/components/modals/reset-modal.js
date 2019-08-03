@@ -42,7 +42,7 @@ class ResetModal extends React.Component {
         method: 'POST',
         url: '/admin/reset',
         data: {
-          resetPassword: 'discovery_reset'
+          resetPassword: 'carnival_reset'
         }
       };
       utils.simpleAxios(axios, config).then(() => {
