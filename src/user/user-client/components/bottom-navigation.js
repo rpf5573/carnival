@@ -27,18 +27,20 @@ class BottomNavigation extends Component {
           <div className="text">지도</div>
           <div className={rippleCN}></div>
         </NavLink>
-        {this.props.puzzleBoxCount > 0 &&
+        {this.props.puzzleBoxCount > 0 && false &&
           <NavLink to="/user/page/puzzle">
             <div className="icon"><PuzzleIcon /></div>
             <div className="text">구역</div>
             <div className={rippleCN}></div>
           </NavLink>
         }
-        <NavLink to="/user/page/upload">
-          <div className="icon"><UploadIcon /></div>
-          <div className="text">업로드</div>
-          <div className={rippleCN}></div>
-        </NavLink>
+        {false && 
+          <NavLink to="/user/page/upload">
+            <div className="icon"><UploadIcon /></div>
+            <div className="text">업로드</div>
+            <div className={rippleCN}></div>
+          </NavLink>
+        }
         <NavLink to="/user/page/post-info">
           <div className="icon"><PostInfoIcon /></div>
           <div className="text">포스트</div>
