@@ -120,11 +120,9 @@ class Point extends Component {
 
     this.teamPoints = this.makeEmptyTeamPoints(this.props.teamCount);
 
-    console.log( points );
-
     // 성공한것들은 보내야지
     if ( points.length > 0 ) {
-      config = {
+      const config = {
         method: 'POST',
         url: '/admin/points/reward',
         data: {
