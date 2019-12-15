@@ -94,17 +94,6 @@ class Point extends Component {
   async handleFormSubmit(e) {
     e.preventDefault();
 
-    // timer check
-    let config = {
-      method: 'POST',
-      url: '/admin/timers/get-team-timers',
-      data: {
-        teamCount: this.props.teamCount
-      }
-    }
-    let response = await utils.simpleAxios(axios, config);
-    let teamTimers = response.data;
-
     // 전체 값이 비어있는지 체크
     let allEmpty = this.teamPoints.filter(obj => {return (Number.isInteger(obj.point) ? true : false)}).length < 1;
     if ( allEmpty ) {
@@ -118,15 +107,13 @@ class Point extends Component {
   
     for( var i = 0; i < this.teamPoints.length; i++ ) {
       const point = this.teamPoints[i].point;
-      // timer가 켜져있는 팀만 점수 제공
-      if ( teamTimers[i].state && Number.isInteger(point) ) {
+      if ( Number.isInteger(point) ) {
         points.push({
           team: (i+1),
-          temp: point // 무족권 temp에 넣는다리 !
+          useable: point // useable에 넣는다잉
         });
-      } 
-      // 단순이 타이머가 꺼져있어서 넣는게 아니라, 꺼져있는데 포인트를 줬을때 문제가 되는거지 !
-      else if (Number.isInteger(point)) {
+      }
+      else {
         errorTeams.push(i+1);
       }
     }
@@ -149,7 +136,7 @@ class Point extends Component {
           placeholders: points
         });
         if ( errorTeams.length > 0 ) {
-          this.props.openAlertModal(true, 'error', '타이머문제로 점수를 받지못한 팀이 있습니다', false, this.props.closeAlertModal);
+          this.props.openAlertModal(true, 'error', '점수를 받지못한 팀이 있습니다', false, this.props.closeAlertModal);
         } else {
           this.props.openAlertModal(false, '성공', false, this.props.closeAlertModal);
         }
@@ -163,7 +150,7 @@ class Point extends Component {
         errorTeams,
         placeholders: points
       });
-      this.props.openAlertModal(true, 'error', '타이머문제로 점수를 지급할 수 없습니다', false, this.props.closeAlertModal);
+      this.props.openAlertModal(true, 'error', '점수를 받지못한 팀이 있습니다', false, this.props.closeAlertModal);
     }
   }
 
